@@ -16,6 +16,7 @@
     "fs": "^0.0.1-security"
   },
   "devDependencies": {
+    "eslint": "^8.16.0",
     "nodemon": "^2.0.16"
   }
 }
