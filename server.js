@@ -1,9 +1,11 @@
 // Load modules
 const express = require('express');
 const Big = require('big.js');
+const cors = require('cors');
 
 // Create server
 const app = express();
+app.use(cors());
 // eslint-disable-next-line no-undef
 const PORT = process.env.PORT || 8000;
 
