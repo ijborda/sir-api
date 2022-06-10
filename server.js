@@ -7,7 +7,7 @@ const cors = require('cors');
 const app = express();
 app.use(cors());
 // eslint-disable-next-line no-undef
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 9000;
 
 // Define server
 app.get('/api/sir', (req, res) => {
@@ -20,49 +20,44 @@ app.get('/api/sir', (req, res) => {
   const beta = Big(req.query.b);
   const gamma = Big(req.query.g);
 
-  const sir = [];
-  let sirCurrent = {};
-
+  const sir = {
+    t: [],
+    s: [],
+    i: [],
+    r: [],
+  };
   // eslint-disable-next-line no-plusplus
   for (let j = 0; j < Number(t); j++) {
     if (j === 0) {
       // Initial values
-      sirCurrent = {
-        t: +j,
-        s: +sInit,
-        i: +iInit,
-        r: +rInit,
-      };
+      sir.t.push(+j);
+      sir.s.push(+sInit);
+      sir.i.push(+iInit);
+      sir.r.push(+rInit);
     } else {
       // Compute derivatives
-      const sDelta = beta.times(-1).times(sir[j - 1].s).times(+sir[j - 1].i).div(n);
-      const iDelta = sDelta.times(-1).minus(gamma.times(+sir[j - 1].i));
-      const rDelta = gamma.times(+sir[j - 1].i);
+      const sDelta = beta.times(-1).times(sir.s[j - 1]).times(+sir.i[j - 1]).div(n);
+      const iDelta = sDelta.times(-1).minus(gamma.times(+sir.i[j - 1]));
+      const rDelta = gamma.times(+sir.i[j - 1]);
       // Compute current SIR
-      const sCurrent = +sir[j - 1].s + +sDelta;
-      const iCurrent = +sir[j - 1].i + +iDelta;
-      const rCurrent = +sir[j - 1].r + +rDelta;
+      const sCurrent = +sir.s[j - 1] + +sDelta;
+      const iCurrent = +sir.i[j - 1] + +iDelta;
+      const rCurrent = +sir.r[j - 1] + +rDelta;
       // Append current SIR to SIR array
-      sirCurrent = {
-        t: j,
-        s: sCurrent,
-        i: iCurrent,
-        r: rCurrent,
-      };
+      sir.t.push(j);
+      sir.s.push(sCurrent);
+      sir.i.push(iCurrent);
+      sir.r.push(rCurrent);
     }
-    sir.push(sirCurrent);
   }
 
   // Round to two decimal places
-  const sirRounded = sir.map((a) => {
-    const round = {
-      t: +a.t.toFixed(2),
-      s: +a.s.toFixed(2),
-      i: +a.i.toFixed(2),
-      r: +a.r.toFixed(2),
-    };
-    return round;
-  });
+  const sirRounded = {
+    t: sir.t.map((a) => +a.toFixed(2)),
+    s: sir.s.map((a) => +a.toFixed(2)),
+    i: sir.i.map((a) => +a.toFixed(2)),
+    r: sir.r.map((a) => +a.toFixed(2)),
+  };
   res.json(sirRounded);
 });
 
