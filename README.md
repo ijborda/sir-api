@@ -35,7 +35,7 @@ None. No authentication needed.
 
 # Installation
 
-Install dependencies:
+To run it locally, install dependencies:
 
 ```
 npm install
@@ -56,7 +56,7 @@ Sample call:
 **Endpoint**:
 https://sir-epimodel-api.herokuapp.com/api/sir?s=79000&i=10&r=0&b=0.5&g=0.33&t=10
 
-This asks for the SIR simulation result with 79,000 initial susceptible individuals, 10 initial infected, and 0 recovered. The transmission rate is beta = 0.5 while the removal rate is gamma = 0.33. Simulation result is up to t = 10 time point (starts at index 0).
+This asks for the SIR simulation result with 79,000 initial susceptible individuals, 10 initial infected, and 0 initial recovered. The transmission rate is beta = 0.5 while the removal rate is gamma = 0.33. Simulation result is up to t = 10 time points (starts at index 0).
 
 <details>
 <summary><b>Response</b></summary>
