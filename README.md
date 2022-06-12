@@ -86,6 +86,7 @@ This asks for the SIR simulation result with 79,000 initial susceptible individu
 
 # Tech Used
 
+<p align="center">
 <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white"/>
 <img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white"/>
 <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/>
@@ -93,7 +94,7 @@ This asks for the SIR simulation result with 79,000 initial susceptible individu
 <img src="https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB"/>
 <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=Postman&logoColor=white">
 <img src="https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white"/>
-
+</p>
 Other sources:
 
 - Welcome page design: <a target="_blank" href="https://html5up.net">HTML5 UP</a>
