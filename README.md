@@ -2,7 +2,7 @@
 
 # SIR Model API | Simulate the epidemic model SIR
 
-[SIR Model API](https://sir-epimodel-api.herokuapp.com) is a free API that simulates the epidemic model SIR.
+[SIR Model API](https://sir-epimodel-api.herokuapp.com) is a free API that simulates the [epidemic model SIR](https://en.wikipedia.org/wiki/Compartmental_models_in_epidemiology#The_SIR_model).
 
 Link to project: [https://sir-epimodel-api.herokuapp.com](https://sir-epimodel-api.herokuapp.com).
 
