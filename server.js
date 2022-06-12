@@ -5,11 +5,19 @@ const cors = require('cors');
 
 // Create server
 const app = express();
-app.use(cors());
 // eslint-disable-next-line no-undef
 const PORT = process.env.PORT || 9000;
 
-// Define server
+// Middlewares
+app.use(express.static('public'));
+app.use(cors());
+
+// Welcome page
+app.get('/', (req, res) => {
+  res.sendFile('index.html');
+});
+
+// API
 app.get('/api/sir', (req, res) => {
   // Get parameters
   const t = Big(req.query.t);

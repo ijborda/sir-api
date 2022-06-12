@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>SIR Model API | Simulate the epidemic model SIR</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+    <!-- SocMed Previews -->
+		<!-- Primary Meta Tags -->
+		<meta name="title" content="SIR Model API | Simulate the epidemic model SIR">
+		<meta name="description" content="A free API that that simulates the epidemic model SIR. Accepts values for different parameters and responds in JSON format.">
+		<meta name="image" property="og:image" content="https://github.com/ijborda/covid19-statistics/blob/main/screenshot.png?raw=true">
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://sir-epimodel-api.herokuapp.com">
+		<meta property="og:title" content="SIR Model API | Simulate the epidemic model SIR">
+		<meta property="og:description" content="A free API that that simulates the epidemic model SIR. Accepts values for different parameters and responds in JSON format.">
+		<meta property="og:image" content="screenshot.png">
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image">
+		<meta property="twitter:url" content="https://sir-epimodel-api.herokuapp.com">
+		<meta property="twitter:title" content="SIR Model API | Simulate the epidemic model SIR">
+		<meta property="twitter:description" content="A free API that that simulates the epidemic model SIR. Accepts values for different parameters and responds in JSON format.">
+		<meta property="twitter:image:src" content="screenshot.png">
+		<!-- Add Favicon -->
+		<link rel="icon" href="favicon.ico">
+    <!-- Math Jax -->
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  </head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Intro -->
+					<section class="intro">
+						<header>
+							<h1>SIR Model API</h1>
+							<p>Simulate the epidemic model SIR</p>
+              <a target="_blank" href="https://documenter.getpostman.com/view/20506585/Uz5NjDZg" class="button primary large">Postman Documentation</a>
+							<ul class="actions">
+								<li><a href="#first" class="arrow scrolly"><span class="label">Next</span></a></li>
+							</ul>
+						</header>
+						<div class="content">
+							<span class="image fill" data-position="center"><img src="images/sir.png" alt="" /></span>
+						</div>
+					</section>
+
+          <section id="first">
+						<header>
+							<h2>Features</h2>
+						</header>
+						<div class="content">
+							<ul class="feature-icons">
+								<li class="icon solid fa-laptop">Free</li>
+								<li class="icon solid fa-code">Responds in JSON format</li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- Section -->
+					<section>
+						<header>
+							<h2>What is the SIR model?</h2>
+						</header>
+						<div class="content">
+							<p>The classical SIR model is used to model the disease spread. It divides the population into three non-overlapping classes: susceptibles (S), infected, (I), and recovered (R). The model describes how the number of individuals under each of the classes changes over time. These changes are described according to the system of ordinary differential equations below: </p>
+							<math display="block">
+                \begin{aligned}
+                {dS \over dt} &= { - {\beta SI} \over N } \\
+                {dI \over dt} &= { {\beta SI} \over N } - {\gamma I} \\
+                {dR \over dt} &= {\gamma I}
+                \end{aligned}
+              </math>
+              <p>\( \beta \) is the effective transmission rate while \( \gamma \) is the removal rate. The model assumes a closed population (i.e. constant population). This means that at each time \( t \), \( S + I + R = N \), where \( N \) is the total population. <a href="https://kingaa.github.io/short-course/parest/odes.html" target="_blank">Read More.</a></p>
+						</div>
+					</section>
+
+				<!-- Section -->
+					<section>
+						<header>
+							<h2>How to use</h2>
+						</header>
+						<div class="content">
+							<p>The API needs six parameters. All query parameters must be a number:</p>
+              <ul>
+                <li><strong>s</strong> - initial number of susceptible individuals</li>
+                <li><strong>i</strong> - initial number of infected</li>
+                <li><strong>r</strong> - initial number of recovered</li>
+                <li><strong>b</strong> - beta (effective transmission rate)</li>
+                <li><strong>g</strong> - gamma (removal rate)</li>
+                <li><strong>t</strong> - time length</li>
+              </ul>
+              <p>The response is an object with three keys:</p>
+              <ul>
+                <li><strong>t</strong> - index of time (index starts at 0)</li>
+                <li><strong>s</strong> - number susceptible individuals at time t</li>
+                <li><strong>i</strong> - number infected individuals at time t</li>
+                <li><strong>r</strong> - number recovered individuals at time t</li>
+              </ul>
+              <a href="https://documenter.getpostman.com/view/20506585/Uz5NjDZg" target="_blank" class="button">See Postman documentation</a>
+            </div>
+					</section>
+		
+				<!-- Section -->
+					<section>
+						<header>
+							<h2>Get in touch</h2>
+						</header>
+						<div class="content">
+							<p><strong>API Links</strong></p>
+							<ul class="actions">
+								<li><a target="_blank" href="https://documenter.getpostman.com/view/20506585/Uz5NjDZg" class="button primary large">Postman Documentation</a></li>
+								<li><a target="_blank" href="https://github.com/ijborda/sir-api" class="button primary large">Github Repository</a></li>
+                <li><a target="_blank" href="https://imarijoyborda.com/sir-simulator/" class="button primary large">Frontend Implementation</a></li>
+							</ul>
+						</div>
+						<footer>
+							<ul class="items">
+								<li>
+									<h3>Email</h3>
+									<a href="mailto:imari.borda2018@gmail.com">imari.borda2018@gmail.com</a>
+								</li>
+								<li>
+									<h3>Website</h3>
+									<a href="http://imarijoyborda.com/">imarijoyborda.com</a>
+								</li>
+								<li>
+									<h3>Elsewhere</h3>
+									<ul class="icons">
+                    <li><a target="_blank" href="https://github.com/ijborda" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+										<li><a target="_blank" href="https://twitter.com/ijborda" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a target="_blank" href="https://www.linkedin.com/in/ijborda/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+									</ul>
+								</li>
+							</ul>
+						</footer>
+					</section>
+
+				<!-- Copyright -->
+					<div class="copyright">&copy; Imari Borda. All rights reserved. Design: <a target="_blank" href="https://html5up.net">HTML5 UP</a>. Favicon: <a target="_blank" href="https://www.flaticon.com/free-icons/shapes" title="shapes icons">Freepik - Flaticon</a></div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+	</body>
+</html>
